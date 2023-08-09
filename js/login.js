@@ -23,7 +23,7 @@ document.getElementById('loginForm').addEventListener('submit', async (e) => {
             localStorage.setItem("jwt", data);
             location.reload(); // Save JWT to local storage
             console.log(data)
-            window.location.href = '/profile.html'; // Redirect to the profile page
+            window.location.href = '/graphql/profile.html'; // Redirect to the profile page
         } else {
             let alertDiv = document.getElementById('alert-response')
             alertDiv.textContent = 'Invalid credentials, please try again';
