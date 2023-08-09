@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SelfQL</title>
+    <link rel="stylesheet" href="css/pico.min.css">
+    <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+            integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+            crossorigin="anonymous"
+    />
+
+</head>
+<body>
+    <main class="container">
+        <article id="loginForm" class="grid">
+            <div>
+                <hgroup>
+                    <h1>Sign in</h1>
+                    <h2>Use your grit:lab credentials</h2>
+                </hgroup>
+                <div id="alert-response" style="color: red">
+                </div>
+                <form id="login-form">
+                    <!-- Markup example 2: input is after label -->
+                    <label for="username">Email address or Username</label>
+                    <input type="text" id="username" name="username" required>
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password" required>
+                    <small>By clicking submit you agree to allow us to spam the sh*t out of your email and to be contacted by our scammer partners. Don't worry we are GDPR compliant!</small>
+
+                    <!-- Button -->
+                    <button type="submit">Submit</button>
+
+                </form>
+
+                <div id="pie-chart" style="margin-left: 30px">
+                </div>
+                <img id="jpg-export"></img>
+            </div>
+        </article>
+    </main>
+    <script type="module" src="./js/script.js"></script>
+    <script type="module" src="./js/login.js"></script>
+</body>
+</html>
