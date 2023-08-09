@@ -169,14 +169,19 @@ class profilePage extends HTMLElement {
     render(data) {
         this.innerHTML =
             `<div class="container">
-              <section>
-              
-    <p><strong>User Info</strong></p>
-    <p>Name: ${data.user[0].attrs.firstName} ${data.user[0].attrs.lastName} Email: ${data.user[0].attrs.email}</p>
-    <p>Gender: ${data.user[0].attrs.gender} Country: ${data.user[0].attrs.country}</p>
-    <button id="logout-btn">Log Out</button>
-</section>
-  
+                <nav>
+  <ul>
+    <li><strong>User Info</strong></li>
+  </ul>
+  <ul>
+    <li>Name: ${data.user[0].attrs.firstName}</li>
+    <li>Surname: ${data.user[0].attrs.lastName}</li>
+    <li>Email: ${data.user[0].attrs.email}</li>
+    <li>Gender: ${data.user[0].attrs.gender}</li>
+    <li>Country: ${data.user[0].attrs.country}</li>
+    <button id="logout-btn" class="btn btn-lg w-25 mx-auto btn-primary btn-block">Log Out</button>
+  </ul>
+</nav>
 <br>
     <section class="grid">
         <div class="">
@@ -236,14 +241,66 @@ class profilePage extends HTMLElement {
                   </svg>
                   <h3 class="display-4 text-white">${Number(
                 data.user[0].auditRatio.toFixed(1)
-            )}</h3>  
-      </div>
-        <div>
-          <div id="pie-chart" style="margin-left: 30px">
+            )}</h3>
+  </div>
+  <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-dark">
+          
+              
+                  <p class="lead text-white">Project Exp</p>
+          
+                  <svg width="400" height="500">
+                  <!-- first project bar -->
+                  <rect x="0" y="25" width="${Math.round(
+                data.transaction[0].amount / 1000
+            )}" height="50" fill="#0074D9"/>
+                  <text x="0" y="20" fill="#FFFFFF" font-size="14">${data.topProjects[0]} </text>
+                  <text x="170" y="20" fill="#FFFFFF" font-size="14">${Math.round(
+                data.transaction[0].amount / 1000
+            )} kB</text>
+                  <!-- second project bar -->
+                  <rect x="0" y="105" width="${Math.round(
+                data.transaction[1].amount / 1000
+            )}" height="50" fill="#0074D9"/>
+                  <text x="0" y="100" fill="#FFFFFF" font-size="14">${data.topProjects[1]} </text>
+                  <text x="170" y="100" fill="#FFFFFF" font-size="14">${Math.round(
+                data.transaction[1].amount / 1000
+            )} kB</text>
+                  <!-- third project bar -->
+                  <rect x="0" y="185" width="${Math.round(
+                data.transaction[2].amount / 1000
+            )}" height="50" fill="#0074D9"/>
+                  <text x="0" y="180" fill="#FFFFFF" font-size="14">${data.topProjects[2]} </text>
+                  <text x="170" y="180" fill="#FFFFFF" font-size="14">${Math.round(
+                data.transaction[2].amount / 1000
+            )} kB</text>
+                  <!-- fourth project bar -->
+                  <rect x="0" y="270" width="${Math.round(
+                data.transaction[3].amount / 1000
+            )}" height="50" fill="#0074D9"/>
+                  <text x="0" y="260" fill="#FFFFFF" font-size="14">${data.topProjects[3]} </text>
+                  <text x="170" y="260" fill="#FFFFFF" font-size="14">${Math.round(
+                data.transaction[3].amount / 1000
+            )} kB</text>
+                  <!-- fifth project bar -->
+                  <rect x="0" y="355" width="${Math.round(
+                data.transaction[4].amount / 1000
+            )}" height="50" fill="#0074D9"/>
+                  <text x="0" y="340" fill="#FFFFFF" font-size="14">${data.topProjects[4]} </text>
+                  <text x="170" y="340" fill="#FFFFFF" font-size="14">${Math.round(
+                data.transaction[4].amount / 1000
+            )} kB</text>
+  </div>
+    <div>
+    <div  class="text-center">
+                  <div id="main"></div>
+                  <div id="pie-chart" style="margin-left: 30px">
                   </div>
-                  <img id="jpg-export"></img>
+                  <img id="jpg-export">
+              </div>
 </div>
-    </div>`;
+    </div>
+    
+`;
     }
 }
 
