@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     const jwt = localStorage.getItem("jwt");
     console.log(jwt)
 
-    if (jwt == undefined && window.location.pathname === "/graphql/profile.html") {
+    if (jwt == undefined && (window.location.pathname === "/graphql/profile.html" || window.location.pathname === "/graphql/profile") {
         window.location.pathname = "/graphql/"
     }
     if (localStorage.getItem("skills") != undefined) {
