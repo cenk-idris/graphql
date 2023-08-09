@@ -236,13 +236,13 @@ class profilePage extends HTMLElement {
                   </svg>
                   <h3 class="display-4 text-white">${Number(
                 data.user[0].auditRatio.toFixed(1)
-            )}</h3>
-
-            
-              
-          
-  </div>
-  
+            )}</h3>  
+      </div>
+        <div>
+          <div id="pie-chart" style="margin-left: 30px">
+                  </div>
+                  <img id="jpg-export"></img>
+</div>
     </div>`;
     }
 }
